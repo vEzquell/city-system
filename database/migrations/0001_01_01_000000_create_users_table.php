@@ -34,8 +34,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->string('id', 191)->primary();
 
             $table->foreignId('user_id')
                 ->nullable()
@@ -48,6 +49,7 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
     }
 
     public function down(): void
