@@ -1,5 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
 
-Route::inertia('/', 'Welcome')->name('home');
+
+Route::get('/', [AuthController::class, 'LoginView'])->name('login');
